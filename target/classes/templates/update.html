@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>首页</title>
+</head>
+<body>
+<form th:action="@{/update}" method="post">
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" id="username" name="username" th:value="${mail1.username}" readonly></td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td><input type="text" id="email" name="email" th:value="${mail1.email}"></td>
+        </tr>
+        <tr>
+            <td>消费:</td>
+            <td><input name="price" type="text"></td>
+        </tr>
+        <tr>
+            <td>调度时间(分钟):</td>
+            <td><input name="time" type="text" th:value="${mail1.time}"></td>
+        </tr>
+        <tr>
+            <td>调度金额:</td>
+            <td><input type="text" name="money" th:value="${mail1.money}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+spring:
+  #mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.183:3303/account_information
+    username: root
+    password: 330333033303
+    type: com.alibaba.druid.pool.DruidDataSource
+    #初始化大小  最小 最大
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    #配置获取链接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    #    password: lihaoll123
+    timeout: 0
+    jedis:
+      pool:
+        max-idle: 10
+        max-wait: 100000
+        max-active: 100
+  thymeleaf:
+    mode: HTML
+    #前缀
+    prefix: classpath:/templates/
+    #后缀
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+
+    cache: false #缓存
+    #Emile
+  mail:
+    host: smtp.163.com #邮箱服务器地址  qq:smtp.qq.com
+    username: zx1013196355@163.com #用户名
+    password: zx1013196355 #授权码   qq:uwrzbhndhuiybfch
+    default-encoding: UTF-8
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    port: 25
+mail:
+  fromMail:
+    addr: zx1013196355@163.com #以我发送邮件
+user:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/data
+    username: root
+    password: lihaoll123
+
+
+server:
+  port: 8089
+
+# Logger Config
+logging:
+  level:
+    com.example.demo: debug

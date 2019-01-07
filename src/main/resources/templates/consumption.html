@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>消费</title>
+</head>
+<body>
+<h2>消费</h2>
+<form th:action="@{/emil}" method="post">
+    <input type="text" name="id" hidden th:value="${mail1.id}">
+    <input type="text" name="email" hidden th:value="${mail1.email}">
+    <p>
+        <label for="price">金额</label>
+        <input type="text" id="price" name="price"/>
+    </p>
+    <input type="submit" value="提交">
+
+</form>
+</body>
+</html>

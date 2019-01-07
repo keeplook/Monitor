@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>首页</title>
+</head>
+<body>
+<div class="container blog-content-container">
+    <input type="hidden"
+           name="${_csrf.parameterName}"
+           value="${_csrf.token}"/>
+    <div th:text="${user}"></div>
+    <!--<div sec:authorize="isAuthenticated()">-->
+        <!--<p>登录名：<span sec:authentication="name"></span></p>-->
+        <!--<p>角色：<span sec:authentication="principal.authorities"></span></p>-->
+        <!--<p>Username：<span sec:authentication="principal.username"></span></p>-->
+        <!--<p>Password：<span sec:authentication="principal.password"></span></p>-->
+    <!--</div>-->
+    <!--<div sec:authorize="hasRole('admin')">-->
+        <!--admin-->
+    <!--</div>-->
+    <!--<div sec:authorize="hasRole('user2')">-->
+        <!--user-->
+    <!--</div>-->
+    <!--<div sec:authorize="hasAuthority('user2')">-->
+        <!--user1111-->
+    <!--</div>-->
+    <!--<div sec:authorize-url="/admin/foo">-->
+        <!--can see /admin-->
+    <!--</div>-->
+
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="注销">
+</form>
+</body>
+</html>
